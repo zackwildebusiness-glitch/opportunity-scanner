@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+/*
+ * Website Opportunity Scanner — design tokens.
+ * Editorial audit-document aesthetic on the Wilde Digital palette:
+ * warm paper surfaces, ink-brown type, one confident orange-red accent.
+ * Light theme only — this is a business document, not a dev tool.
+ */
+:root {
+  --paper: #fbf5ea;
+  --surface: #ffffff;
+  --soft: #fffdf7;
+  --ink: #261c10;
+  --muted: #4d4337;
+  --line: #e8dfd0;
+  --line-strong: #261c10;
+  --accent: #f25d3b;
+  --accent-deep: #d94b2f;
+  --accent-hover: #c93f27;
+  --tint: #f6e7c8;
+  --gold: #ffc848;
+  --success: #2f9461;
+  --warning: #b07d1e;
+  --danger: #b3261e;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-soft: var(--soft);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-deep: var(--accent-deep);
+  --color-accent-hover: var(--accent-hover);
+  --color-tint: var(--tint);
+  --color-gold: var(--gold);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-instrument);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-instrument), sans-serif;
+}
+
+::selection {
+  background: var(--tint);
+  color: var(--ink);
+}
+
+/* Report pages must print cleanly: white paper, no chrome. */
+@media print {
+  body {
+    background: #ffffff;
+  }
+
+  .print-hidden {
+    display: none !important;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
